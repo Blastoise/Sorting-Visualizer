@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.nav-group {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8349c3;
+}
+
+.drawer {
+  font-size: 2rem;
+  display: none;
+}
+
+h2 {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  user-select: none;
+  margin: auto 20px;
+}
+
+.items {
+  display: flex;
+  user-select: none;
+  /* flex-direction: row; */
+  /* border: 1px solid red; */
+  /* width: 50%; */
+  justify-content: center;
+  align-items: center;
+}
+
+.resp {
+  display: flex;
+  user-select: none;
+  /* flex-direction: row; */
+  /* border: 1px solid red; */
+  /* width: 50%; */
+  justify-content: center;
+  align-items: center;
+}
+
+#algos {
+  margin: 0 10px;
+  color: black;
+  background-color: rgb(232, 240, 254);
+  /* font-family: "Montserrat", sans-serif; */
+}
+.size-group {
+  display: flex;
+  /* border: 1px solid red; */
+}
+#size-label {
+  display: inline-block;
+  /* border: 1px solid black; */
+  margin: auto 0px;
+}
+input[type="text"] {
+  /* background-color: #ff043a; */
+  background-color: rgb(232, 240, 254);
+  /* background-color: rgb(245, 150, 8); */
+  /* color: rgba(251, 255, 6, 0.87); */
+  color: rgb(80, 76, 76);
+  font-weight: 700;
+  word-spacing: 30px;
+  width: 80px;
+  margin: 0 10px;
+  outline: none;
+  border-radius: 50px;
+  text-align: center;
+  padding: 3px auto;
+  border: none;
+}
+
+.speed-group {
+  display: flex;
+}
+
+#speed-label {
+  display: inline-block;
+  margin: auto 0px;
+}
+input[type="range"] {
+  /* color: black; */
+  /* width: 50px; */
+  margin: 0 10px;
+}
+.random {
+  margin: 0 10px;
+  background-color: #ffdb58;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  padding: 5px;
+  outline: none;
+  border: none;
+  /* padding: 10px; */
+  border-radius: 50px;
+}
+.random:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 1040px) {
+  .drawer {
+    display: block;
+  }
+  .items {
+    display: none;
+  }
+  .resp {
+    display: flex;
+    user-select: none;
+    width: 100%;
+    background-color: rgb(1, 25, 88);
+    padding: 8px;
+    justify-content: center;
+    align-items: baseline;
+    /* background-color: black; */
+    align-items: flex-end;
+  }
+  #algos {
+    margin: auto 10px;
+    color: black;
+    /* font-family: "Montserrat", sans-serif; */
+  }
+}
