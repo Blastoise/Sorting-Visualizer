@@ -1,0 +1,121 @@
+.cont {
+  /* position: absolute; */
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  /* margin-left: 50%;
+  margin-top: 5%; */
+  border: 1px solid red;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* border: 1px solid green; */
+}
+.data {
+  background-color: blue;
+  display: inline-block;
+  width: 15px;
+  margin: 0 5px;
+}
+
+.play-pause {
+  margin: 20px 10px;
+  display: flex;
+}
+.speed-group {
+  display: flex;
+}
+
+#speed-label {
+  display: inline-block;
+  margin: auto 0px;
+}
+input[type="range"] {
+  /* color: black; */
+  /* width: 50px; */
+  margin: 0 10px;
+}
+
+.btn-start-reset {
+  margin: 0 10px;
+  background-color: #ffdb58;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  padding: 10px;
+  outline: none;
+  border: none;
+  /* padding: 10px; */
+  border-radius: 20px;
+}
+.btn-start-reset:focus {
+  outline: none;
+}
+
+/* .buttons {
+  padding: 10px;
+  align-items: center;
+  margin: 10px, 10px;
+} */
+
+input[type="range"] {
+  -webkit-appearance: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 300px;
+  height: 5px;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: goldenrod;
+  margin-top: -4px;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+
+/* #size {
+  position: relative;
+} */
+.alert-container {
+  width: 100%;
+  border: 1px solid black;
+  display: block;
+}
+.alert {
+  padding: 50px;
+  background-color: #f44336;
+  color: white;
+  text-align: end;
+  /* position: absolute; */
+  float: right;
+  /* position: absolute; */
+  /* bottom: 100%; */
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
