@@ -363,7 +363,6 @@ class Visualizer extends Component {
           <button className="btn-start-reset" onClick={this.sort}>
             Start
           </button>
-          <button className="btn-start-reset">Reset</button>
           <div className="speed-group">
             <label htmlFor="range" id="speed-label">
               Speed:
