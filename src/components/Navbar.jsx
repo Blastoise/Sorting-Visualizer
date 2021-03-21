@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import "./navigation.css";
+import "./Navbar.css";
 
-class Navigation extends Component {
+class Navbar extends Component {
   state = { drawer: false, error: false };
 
   handleDrawer = () => {
-    console.log("Working");
     this.setState({ drawer: !this.state.drawer });
   };
 
-  handleDisplay = () => {
+  handleErrorDisplay = () => {
     this.setState({ error: !this.state.error });
   };
 
@@ -24,12 +23,13 @@ class Navigation extends Component {
               className={this.state.drawer ? "fas fa-times" : "fas fa-bars"}
             ></i>
           </div>
-          <div className={this.state.drawer ? "resp" : "items"}>
+          <div className={this.state.drawer ? "items items-click" : "items"}>
             <select
               name=""
               id="algos"
-              defaultValue="Sort Algorithm"
-              onChange={this.props.selectChange}
+              defaultValue={this.props.algorithm}
+              onChange={this.props.handleAlgorithmChange}
+              disabled={!this.props.start}
             >
               <option value="Sort Algorithm" disabled hidden>
                 Sort Algorithm
@@ -38,22 +38,22 @@ class Navigation extends Component {
               <option value="Selection Sort">Selection Sort</option>
               <option value="Insertion Sort">Insertion Sort</option>
               <option value="Merge Sort">Merge Sort</option>
-              <option value="Quick Sort">Quick Sort</option>
             </select>
             <div className="size-group">
               <label htmlFor="size" id="size-label">
                 Size:
               </label>
               <input
-                type="text"
                 name="size"
+                type="text"
                 autoComplete="off"
                 value={this.props.size}
                 id="size"
                 min="1"
                 max="100"
+                disabled={!this.props.start}
                 onChange={(e) => {
-                  this.props.increase(e.target.value);
+                  this.props.handleSize(e.target.value);
                   if (e.target.value < 1 || e.target.value > 100) {
                     this.setState({ error: true });
                   } else {
@@ -62,14 +62,18 @@ class Navigation extends Component {
                 }}
               />
             </div>
-            <button className="random" onClick={this.props.randomize}>
+            <button
+              className="random"
+              onClick={this.props.randomize}
+              disabled={!this.props.start}
+            >
               Randomize
             </button>
           </div>
         </nav>
         {this.state.error && (
           <div className="alert">
-            <span className="closebtn" onClick={this.handleDisplay}>
+            <span className="closebtn" onClick={this.handleErrorDisplay}>
               &times;
             </span>
             The number must be between 1 and 100.
@@ -80,4 +84,4 @@ class Navigation extends Component {
   }
 }
 
-export default Navigation;
+export default Navbar;
