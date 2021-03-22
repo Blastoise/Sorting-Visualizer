@@ -1,6 +1,4 @@
 export function createColor(indexArr, delay, action) {
-  console.log("here");
-  console.log(this);
   switch (action) {
     case "SWAP":
       this.timeout.push(
