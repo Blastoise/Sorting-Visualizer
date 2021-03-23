@@ -84,14 +84,31 @@ class Visualizer extends Component {
       let array = [...this.state.array];
       let speed = this.state.speed;
 
+      let resetTime;
+
       if (algorithm === "Bubble Sort") {
-        bubbleSort(array, speed, this.createColor, this.createAnimation);
+        resetTime = bubbleSort(
+          array,
+          speed,
+          this.createColor,
+          this.createAnimation
+        );
       } else if (algorithm === "Selection Sort") {
-        selectionSort(array, speed, this.createColor, this.createAnimation);
+        resetTime = selectionSort(
+          array,
+          speed,
+          this.createColor,
+          this.createAnimation
+        );
       } else if (algorithm === "Insertion Sort") {
-        insertionSort(array, speed, this.createColor, this.createAnimation);
+        resetTime = insertionSort(
+          array,
+          speed,
+          this.createColor,
+          this.createAnimation
+        );
       } else if (algorithm === "Merge Sort") {
-        mergeSort(
+        resetTime = mergeSort(
           array,
           0,
           array.length - 1,
@@ -101,6 +118,13 @@ class Visualizer extends Component {
           this.createAnimationMergeSort
         );
       }
+
+      // For changing the state from RESET to START
+      this.timeout.push(
+        setTimeout(() => {
+          this.reset();
+        }, resetTime)
+      );
     }
   };
 
