@@ -25,6 +25,7 @@ function insertionSort(array, speed, createColor, createAnimation) {
       delay += speed;
     }
   }
+  return delay;
 }
 
 export default insertionSort;
