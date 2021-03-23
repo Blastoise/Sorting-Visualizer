@@ -25,6 +25,7 @@ function selectionSort(array, speed, createColor, createAnimation) {
     createColor([], delay, "NONE");
     delay += speed;
   }
+  return delay;
 }
 
 export default selectionSort;
