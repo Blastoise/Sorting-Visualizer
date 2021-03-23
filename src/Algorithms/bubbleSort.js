@@ -17,6 +17,7 @@ function bubbleSort(array, speed, createColor, createAnimation) {
       delay += speed;
     }
   }
+  return delay;
 }
 
 export default bubbleSort;
