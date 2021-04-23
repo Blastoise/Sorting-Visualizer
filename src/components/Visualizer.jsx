@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
+import AlgoInfo from "./AlgoInfo";
 import bubbleSort from "../Algorithms/bubbleSort";
 import selectionSort from "../Algorithms/selectionSort";
 import insertionSort from "../Algorithms/insertionSort";
@@ -204,6 +205,7 @@ class Visualizer extends Component {
             />
           </div>
         </div>
+        <AlgoInfo />
       </div>
     );
   }
