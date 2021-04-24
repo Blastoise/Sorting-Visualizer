@@ -23,7 +23,7 @@ class Visualizer extends Component {
     swapped: [],
     size: 25,
     algorithm: "Sort Algorithm",
-    speed: 1,
+    speed: 1000,
     start: true,
     width: window.innerWidth,
     height: window.innerHeight,
@@ -61,18 +61,17 @@ class Visualizer extends Component {
   };
 
   handleAlgorithmChange = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     this.setState({ algorithm: e.target.value });
   };
 
   handleSpeed = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     this.setState({ speed: parseInt(e.target.value) });
   };
 
   handleSize = (size) => {
-    console.log(size);
-
+    // console.log(size);
     this.setState({ size });
   };
 
@@ -208,7 +207,7 @@ class Visualizer extends Component {
                 type="range"
                 id="range"
                 min="1"
-                max="3000"
+                max="2000"
                 disabled={!this.state.start}
                 value={this.state.speed}
                 onChange={this.handleSpeed}
