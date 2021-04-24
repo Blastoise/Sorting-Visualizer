@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import AlgoInfo from "./AlgoInfo";
 import { bubbleSort, bubbleSortInfo } from "../Algorithms/bubbleSort";
 import { selectionSort, selectionSortInfo } from "../Algorithms/selectionSort";
@@ -55,7 +56,7 @@ class Visualizer extends Component {
     }
 
     array = shuffleArray(array);
-    console.log(array);
+    // console.log(array);
     this.setState({ array });
   };
 
@@ -164,56 +165,61 @@ class Visualizer extends Component {
     else if (this.state.algorithm === "Merge Sort") algoInfo = mergeSortInfo;
 
     return (
-      <div>
-        <Navbar
-          randomize={this.randomArrayGenerator}
-          algorithm={this.state.algorithm}
-          size={this.state.size}
-          handleAlgorithmChange={this.handleAlgorithmChange}
-          handleSize={this.handleSize}
-          start={this.state.start}
-        />
-        <div className="cont">
-          {this.state.array.map((number, index) => (
-            <div
-              className="data"
-              key={index}
-              style={{
-                height: `${number * slope + intercept}px`,
-                width: `${Math.max(1, parseInt(widthEle))}px`,
-                backgroundColor: this.state.swapped.includes(index)
-                  ? "green"
-                  : this.state.compareElements.includes(index)
-                  ? "red"
-                  : "turquoise",
-                color: "white",
-              }}
-            ></div>
-          ))}
-        </div>
-        <div className="play-pause">
-          <button
-            className="btn-start-reset"
-            onClick={this.state.start === true ? this.sort : this.reset}
-          >
-            {this.state.start === true ? "Start" : "Reset"}
-          </button>
-          <div className="speed-group">
-            <label htmlFor="range" id="speed-label">
-              Speed:
-            </label>
-            <input
-              type="range"
-              id="range"
-              min="1"
-              max="3000"
-              disabled={!this.state.start}
-              value={this.state.speed}
-              onChange={this.handleSpeed}
-            />
+      <div className="app-container">
+        <div className="app-content">
+          <Navbar
+            randomize={this.randomArrayGenerator}
+            algorithm={this.state.algorithm}
+            size={this.state.size}
+            handleAlgorithmChange={this.handleAlgorithmChange}
+            handleSize={this.handleSize}
+            start={this.state.start}
+          />
+          <div className="cont">
+            {this.state.array.map((number, index) => (
+              <div
+                className="data"
+                key={index}
+                style={{
+                  height: `${number * slope + intercept}px`,
+                  width: `${Math.max(1, parseInt(widthEle))}px`,
+                  backgroundColor: this.state.swapped.includes(index)
+                    ? "green"
+                    : this.state.compareElements.includes(index)
+                    ? "red"
+                    : "turquoise",
+                  color: "white",
+                }}
+              ></div>
+            ))}
           </div>
+          <div className="play-pause">
+            <button
+              className="btn-start-reset"
+              onClick={this.state.start === true ? this.sort : this.reset}
+            >
+              {this.state.start === true ? "Start" : "Reset"}
+            </button>
+            <div className="speed-group">
+              <label htmlFor="range" id="speed-label">
+                Speed:
+              </label>
+              <input
+                type="range"
+                id="range"
+                min="1"
+                max="3000"
+                disabled={!this.state.start}
+                value={this.state.speed}
+                onChange={this.handleSpeed}
+              />
+            </div>
+          </div>
+          <AlgoInfo algoInfo={algoInfo} />
         </div>
-        <AlgoInfo algoInfo={algoInfo} />
+        <div className="app-footer">
+          <Footer />
+        </div>
       </div>
     );
   }
