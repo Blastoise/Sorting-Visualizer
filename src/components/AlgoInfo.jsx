@@ -1,18 +1,19 @@
 import React from "react";
 import "./AlgoInfo.css";
 
-const AlgoInfo = () => {
-  let val = "s";
+const AlgoInfo = (props) => {
   return (
     <div className="container algo-container">
       <div className="row heading-container">
-        <h1 className="col-lg">{val ? "Bubble Sort" : "Select Algorithm"}</h1>
+        <h1 className="col-lg">
+          {props.algoInfo ? props.algoInfo.name : "Select Algorithm"}
+        </h1>
       </div>
       <div className="row">
         <div className="col-lg info-container">
           <p>
-            {val
-              ? 'Bubble Sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm, which is a comparison sort, is named for the way smaller or larger elements "bubble" to the top of the list. This simple algorithm performs poorly in real world use and is used primarily as an educational tool.'
+            {props.algoInfo
+              ? props.algoInfo.description
               : "You must select an algorithm before you can visualize it's execution on an array of numbers."}
           </p>
         </div>
@@ -26,9 +27,9 @@ const AlgoInfo = () => {
                 <td> &nbsp; &nbsp; &nbsp;</td>
                 <td>
                   <code>
-                    <span>
-                      O(n<sup>2</sup>)
-                    </span>
+                    {props.algoInfo
+                      ? props.algoInfo.performance.worstTime
+                      : "-"}
                   </code>
                 </td>
               </tr>
@@ -37,9 +38,9 @@ const AlgoInfo = () => {
                 <td> &nbsp; &nbsp; &nbsp;</td>
                 <td>
                   <code>
-                    <span>
-                      O(n<sup>2</sup>)
-                    </span>
+                    {props.algoInfo
+                      ? props.algoInfo.performance.averageTime
+                      : "-"}
                   </code>
                 </td>
               </tr>
@@ -48,7 +49,7 @@ const AlgoInfo = () => {
                 <td> &nbsp; &nbsp; &nbsp;</td>
                 <td>
                   <code>
-                    <span>O(n)</span>
+                    {props.algoInfo ? props.algoInfo.performance.bestTime : "-"}
                   </code>
                 </td>
               </tr>
@@ -57,7 +58,9 @@ const AlgoInfo = () => {
                 <td> &nbsp; &nbsp; &nbsp;</td>
                 <td>
                   <code>
-                    <span>O(1)</span>
+                    {props.algoInfo
+                      ? props.algoInfo.performance.worstSpace
+                      : "-"}
                   </code>
                 </td>
               </tr>
