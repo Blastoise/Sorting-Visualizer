@@ -1,4 +1,4 @@
-function bubbleSort(array, speed, createColor, createAnimation) {
+export function bubbleSort(array, speed, createColor, createAnimation) {
   let delay = speed;
   let arraySize = array.length;
 
@@ -20,4 +20,22 @@ function bubbleSort(array, speed, createColor, createAnimation) {
   return delay;
 }
 
-export default bubbleSort;
+export const bubbleSortInfo = {
+  name: "Bubble Sort",
+  description:
+    'Bubble Sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm, which is a comparison sort, is named for the way smaller or larger elements "bubble" to the top of the list. This simple algorithm performs poorly in real world use and is used primarily as an educational tool.',
+  performance: {
+    worstTime: (
+      <span>
+        O(n<sup>2</sup>)
+      </span>
+    ),
+    averageTime: (
+      <span>
+        O(n<sup>2</sup>)
+      </span>
+    ),
+    bestTime: <span>O(n)</span>,
+    worstSpace: <span>O(1)</span>,
+  },
+};
