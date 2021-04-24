@@ -1,4 +1,4 @@
-function insertionSort(array, speed, createColor, createAnimation) {
+export function insertionSort(array, speed, createColor, createAnimation) {
   let delay = speed;
   let arraySize = array.length;
 
@@ -28,4 +28,24 @@ function insertionSort(array, speed, createColor, createAnimation) {
   return delay;
 }
 
-export default insertionSort;
+export const insertionSortInfo = {
+  name: "Insertion Sort",
+  description: `Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands.
+     The array is virtually split into a sorted and an unsorted part.
+      Values from the unsorted part are picked one by one and placed at the correct position in the sorted part.
+       It is an in-place, stable sorting algorithm that is inefficient on large input arrays but works well for data sets that are almost sorted.`,
+  performance: {
+    worstTime: (
+      <span>
+        O(n<sup>2</sup>)
+      </span>
+    ),
+    averageTime: (
+      <span>
+        O(n<sup>2</sup>)
+      </span>
+    ),
+    bestTime: <span>O(n)</span>,
+    worstSpace: <span>O(1)</span>,
+  },
+};
