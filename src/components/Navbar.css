@@ -19,7 +19,7 @@
   display: none;
 }
 
-h2 {
+.nav-group h2 {
   color: white;
   font-family: "Montserrat", sans-serif;
   user-select: none;
