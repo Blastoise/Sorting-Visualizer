@@ -3,6 +3,38 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1 0 auto;
+  user-select: none;
+}
+.app-footer {
+  margin-top: 20px;
+  height: 70px;
+  flex-shrink: 0;
+  background-color: royalblue;
+  font-family: "Open Sans";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.app-footer a {
+  color: white;
+  font-weight: bold;
+}
+
+.app-footer span {
+  color: red;
+}
+
 .cont {
   /* position: absolute; */
   width: 100%;
