@@ -49,8 +49,8 @@ class Navbar extends Component {
                 autoComplete="off"
                 value={this.props.size}
                 id="size"
-                min="1"
-                max="100"
+                minLength="1"
+                maxLength="3"
                 disabled={!this.props.start}
                 onChange={(e) => {
                   this.props.handleSize(e.target.value);
