@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
 import AlgoInfo from "./AlgoInfo";
-import bubbleSort from "../Algorithms/bubbleSort";
-import selectionSort from "../Algorithms/selectionSort";
-import insertionSort from "../Algorithms/insertionSort";
-import { mergeSort } from "../Algorithms/mergeSort";
+import { bubbleSort, bubbleSortInfo } from "../Algorithms/bubbleSort";
+import { selectionSort, selectionSortInfo } from "../Algorithms/selectionSort";
+import { insertionSort, insertionSortInfo } from "../Algorithms/insertionSort";
+import { mergeSort, mergeSortInfo } from "../Algorithms/mergeSort";
 import { createColor } from "../Actions/createColor";
 import {
   createAnimation,
@@ -155,6 +155,14 @@ class Visualizer extends Component {
 
     let widthEle = (this.state.width - 30 - (size + 1) * 5) / size;
 
+    let algoInfo;
+    if (this.state.algorithm === "Bubble Sort") algoInfo = bubbleSortInfo;
+    else if (this.state.algorithm === "Insertion Sort")
+      algoInfo = insertionSortInfo;
+    else if (this.state.algorithm === "Selection Sort")
+      algoInfo = selectionSortInfo;
+    else if (this.state.algorithm === "Merge Sort") algoInfo = mergeSortInfo;
+
     return (
       <div>
         <Navbar
@@ -205,7 +213,7 @@ class Visualizer extends Component {
             />
           </div>
         </div>
-        <AlgoInfo />
+        <AlgoInfo algoInfo={algoInfo} />
       </div>
     );
   }
