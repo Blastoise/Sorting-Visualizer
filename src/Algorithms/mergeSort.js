@@ -129,3 +129,17 @@ export function mergeSort(
   }
   return newDelay;
 }
+
+export const mergeSortInfo = {
+  name: "Merge Sort",
+  description: `Merge Sort is an efficient, stable sorting algorith that makes use of the divide and conquer strategy.
+   Conceptually, a merge sort works as follows:
+    1. Divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted).
+     2. Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.`,
+  performance: {
+    worstTime: <span>O(nlogn)</span>,
+    averageTime: <span>O(nlogn)</span>,
+    bestTime: <span>O(nlogn)</span>,
+    worstSpace: <span>O(n)</span>,
+  },
+};
