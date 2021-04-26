@@ -46,3 +46,13 @@ tbody td:first-child {
     margin-bottom: 10px;
   }
 }
+
+@media only screen and (max-width: 520px) {
+  .footer-head {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+}
