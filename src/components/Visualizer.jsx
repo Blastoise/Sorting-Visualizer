@@ -56,22 +56,18 @@ class Visualizer extends Component {
     }
 
     array = shuffleArray(array);
-    // console.log(array);
     this.setState({ array });
   };
 
   handleAlgorithmChange = (e) => {
-    // console.log(e.target.value);
     this.setState({ algorithm: e.target.value });
   };
 
   handleSpeed = (e) => {
-    // console.log(e.target.value);
     this.setState({ speed: parseInt(e.target.value) });
   };
 
   handleSize = (size) => {
-    // console.log(size);
     this.setState({ size });
   };
 
@@ -155,6 +151,7 @@ class Visualizer extends Component {
 
     let widthEle = (this.state.width - 30 - (size + 1) * 5) / size;
 
+    // Setting algoInfo object according to currently selected algorithm
     let algoInfo;
     if (this.state.algorithm === "Bubble Sort") algoInfo = bubbleSortInfo;
     else if (this.state.algorithm === "Insertion Sort")
