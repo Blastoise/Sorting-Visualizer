@@ -149,7 +149,7 @@ class Visualizer extends Component {
 
     let { slope, intercept } = lineEquation(this.state.height, size, 1);
 
-    let widthEle = (this.state.width - 30 - (size + 1) * 5) / size;
+    let widthEle = (this.state.width - 33 - (size + 1) * 5) / size;
 
     // Setting algoInfo object according to currently selected algorithm
     let algoInfo;
@@ -180,9 +180,9 @@ class Visualizer extends Component {
                   height: `${number * slope + intercept}px`,
                   width: `${Math.max(1, parseInt(widthEle))}px`,
                   backgroundColor: this.state.swapped.includes(index)
-                    ? "green"
+                    ? "royalblue"
                     : this.state.compareElements.includes(index)
-                    ? "red"
+                    ? "#8349c3"
                     : "turquoise",
                   color: "white",
                 }}
