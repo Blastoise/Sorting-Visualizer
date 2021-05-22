@@ -1,1 +1,1 @@
-# Sorting-Visualizer
+![Sorting-Visualizer](https://socialify.git.ci/Blastoise/Sorting-Visualizer/image?description=1&descriptionEditable=%F0%9F%9A%80%20%F0%9F%A7%91%F0%9F%8F%BB%E2%80%8D%F0%9F%92%BB%20Visualize%20sorting%20algos.&font=Inter&forks=1&issues=1&language=1&owner=1&pattern=Floating%20Cogs&pulls=1&stargazers=1&theme=Dark)
